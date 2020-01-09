@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <input type="text" name="carro" id="nomeCarro" placeholder="Nome do Carro" value="" />
+    <button class="add">Add</button> 
+    <button class="contar">Contar</button>
+    <button class="mostrar">Mostrar Tabela</button>
+
+    <ul id="carros">
+
+    </ul>
+
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Carro</th>
+            </tr>
+        </thead>
+        <tbody id="carros">
+        </tbody>
+    </table>
+    <script src="../Scripts/jquery-3.4.1.js"></script>
+    <script>
+        var carros = [];
+        $("table").hide();
+
+        jQuery(document).ready(function () {
+            $("button.add").click(function () {
+                //var nomeCarro = document.getElementById("nomeCarro").value;
+                var nomeCarro = $("#nomeCarro").val();
+                carros.push(nomeCarro);
+                $("ul#carros")
+                    .append(`<li>${nomeCarro} &nbsp; <span style="cursor:pointer" onclick="remove(this)"> X </span></li>`);
+
+
+            });
+            $("button.mostrar").click(function () {
+                $("ul#carros,table").toggle();
+            });
+
+            $("button.contar").click(function () {
+                alert($("ul#carros li").length);
+                alert(carros.length)
+                //$("ul#carros li").each(function (indice, value) {
+                //    var nomeCarro = value.innerText.replace('X', '');
+                //    carros.push(nomeCarro);
+               // }
+                var numCarros = $("ul#carros li").length;
+
+                $("tbody#carros").empty();
+
+                for (var i = 0; i < carros.length; i++) {
+                    $("tbody#carros")
+                        .append(`<tr><td>${i+1}</td><td>${carros[i]} &nbsp; <span style="cursor:pointer" onclick="remove(this)"> X </span></td></tr>`);
+                };
+            });
+        });
+
+        function remove(controle) {
+            $(controle).parent().remove();
+        }
+
+    </script>
+</body>
+</html>

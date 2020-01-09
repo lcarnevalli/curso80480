@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="text" id="num1" value="" />
+    <p></p>
+    <input type="text" id="num2" value="" />
+    <p></p>
+    <label id="resultado">sem resultado</label>
+    <p></p>
+    <input type="button" id="Somar" value="Somar" />
+    <input type="button" id="Subtrair" onclick="subtrairNumero()" value="Subtrair" />
+    <input type="button" id="Multiplica" onclick="multiplicarNumero()" value="Multiplica" />
+    <input type="button" id="Dividir" onclick="dividirNumero()" value="Dividir" />
+    
+    <script>
+        //onclick="somarNumero()"
+        document.getElementById("Somar")
+            .addEventListener("click", function {
+                somarNumero(document.getElementById("num1").value, document.getElementById("num21").value);
+            }
+            )
+
+        function somarNumero(inNum1, inNum2) {
+            if ((inNum1) == "" || (inNum1) == "") {
+                var num1 = document.getElementById("num1").value;
+                var num2 = document.getElementById("num2").value;
+            }
+            var func = arguments.callee.toString().substr("function".length).substr(0, arguments.callee.toString().indexOf('(') - 8)
+
+
+            var soma = parseInt(num1) + parseInt(num2);
+
+            document.getElementById("resultado").innerHTML = '<strong>' + soma + '</strong>' + func;
+        }
+
+        function subtrairNumero() {
+            var func = arguments.callee.toString().substr("function".length).substr(0, arguments.callee.toString().indexOf('(') - 8)
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+
+            var soma = parseInt(num1) - parseInt(num2);
+
+            document.getElementById("resultado").innerHTML = '<strong>' + soma + '</strong> ' + func;
+        }
+        function multiplicarNumero() {
+            var func = arguments.callee.toString().substr("function".length).substr(0, arguments.callee.toString().indexOf('(') - 8)
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+
+            var soma = parseInt(num1) * parseInt(num2);
+
+            document.getElementById("resultado").innerHTML = '<strong>' + soma + '</strong> ' + func;
+        }
+
+        function dividirNumero() {
+            var func = arguments.callee.toString().substr("function".length).substr(0, arguments.callee.toString().indexOf('(') - 8)
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+
+            var soma = parseFloat(num1) / parseFloat(num2);
+
+            document.getElementById("resultado").innerHTML = '<strong>' + soma + '</strong> ' + func;
+        }
+    </script>
+
+
+
+</body>
+</html>
