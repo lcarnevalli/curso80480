@@ -15,19 +15,18 @@
         </thead>
         <tbody id="dados"></tbody>
     </table>
+
     <script src="http://localhost:50379/Scripts/jquery-3.3.1.js"></script>
     <script>
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://localhost:50379/api/cadastros')
-        xhr.send();
+        $.getJSON("http://localhost:50379/api/cadastros", preencherGrid);
 
-        xhr.onload = function () {
-            var json = JSON.parse(xhr.responseText)
-            for (var i = 0; i < json.length  ; i++) {
+        function preencherGrid(json) {
+            for (var i = 0; i < json.length; i++) {
                 var linha = `<tr><td>${json[i].Id}</td><td>${json[i].Nome}</td><td>${json[i].Idade}</td></tr>`;
                 $("#dados").append(linha);
             }
         }
+
     </script>
 
 

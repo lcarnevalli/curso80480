@@ -84,6 +84,7 @@
     <Content Include="LAB003\05.html" />
     <Content Include="LAB005\GET-JQUERY.html" />
     <Content Include="LAB005\GET-JS.html" />
+    <Content Include="LAB005\POST-JQUERY.html" />
     <Content Include="LAB005\POST-JS.html" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
