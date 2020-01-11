@@ -19,9 +19,12 @@ namespace api.Controllers
     {
         private apiContext db = new apiContext();
 
+
         // GET: api/cadastros
         public IQueryable<cadastro> Getcadastroes()
         {
+            //piorar o serviço esperar 5 segundos
+            System.Threading.Thread.Sleep(5000);
             return db.cadastroes;
         }
 
@@ -29,6 +32,9 @@ namespace api.Controllers
         [ResponseType(typeof(cadastro))]
         public IHttpActionResult Getcadastro(int id)
         {
+            //piorar o serviço esperar 5 segundos
+            System.Threading.Thread.Sleep(5000);
+
             cadastro cadastro = db.cadastroes.Find(id);
             if (cadastro == null)
             {
@@ -79,6 +85,9 @@ namespace api.Controllers
         {
             if (!ModelState.IsValid)
             {
+                //parar por 5 segundos
+                //System.Threading.Thread.Sleep(5000);
+
                 return BadRequest(ModelState);
             }
 

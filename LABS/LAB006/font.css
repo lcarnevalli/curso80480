@@ -1,0 +1,52 @@
+﻿@font-face {
+    font-family: 'Homer';
+    src: url('Homer_Simpson_Revised.ttf') format('truetype');
+}
+
+body {
+    font-family: Homer;
+    font-size:20px;
+    background-color:red;
+    
+}
+p{
+    font-size:2em;
+    color: yellow;
+    letter-spacing: 5px;
+    text-shadow: 3px 3px 0 #fff;
+}
+p::first-letter{
+    font-size:100px;
+}
+p::after{
+    content:'<<<<<FIM>>>>'
+}
+p::selection{
+    background-color:chartreuse;
+}
+p:nth-child(even) {
+    background-color:yellow;
+}
+p:empty {
+    content:"vazio";
+}
+:root{
+    background-color:black!important;
+}
+
+.degrade {
+    height: 200px;
+    width: 200px;
+    /*background: linear-gradient(to top, gray, white);*/ 
+    background: linear-gradient(-90deg, gray, white);
+}
+.degradeGLBT {
+    height: 500px;
+    width: 500px;
+    background: linear-gradient(to right,red, orange, yellow, green, blue, purple);
+}
+.degradeOldSchool {
+    height: 500px;
+    width: 500px;
+    background: radial-gradient(red, orange, yellow, green, blue, purple);
+}
