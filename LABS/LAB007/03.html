@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+
+        var objeto1 = new Object();
+        objeto1.nome = "Adão";
+        objeto1.Idade = 30;
+        objeto1.Sexo = "Masc";
+
+        var objeto2 = {};
+        objeto2.nome = "Eva";
+        objeto2.Idade = 20;
+        objeto2.Sexo = "Fem";
+
+       /* var objeto3 = {
+            Nome = "José",
+            Idade = 300,
+            Sexo = "Anjo",
+            dataNascimento = function () {
+                return date() - this.dataNascimento;
+            }
+        };
+        */
+
+        var contaBancaria = function (nome, cpf, ag) {
+            this.Nome = nome;
+            this.CPF = cpf;
+            this.AG = ag;
+            var contaCorrente = function (cpf, ag) {
+                //return (this.CPF / this.AG);
+                return (cpf / ag);
+            };
+            this.Conta = contaCorrente(cpf_passado, ag_passado);
+        };
+        var contaNova = new contaBancaria("Leonildo Carnevalli", 123, 3140);
+
+        console.    log(contaNova.Conta);
+
+
+        
+    </script>
+</body>
+</html>

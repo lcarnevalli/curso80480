@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        img {
+            width: 1000px;
+            height: 1000px;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="file" id ="arquivo" name="arquivo_a_subir" value="" />
+        <ul id="arquivos"></ul>
+        <pre id="notepad"></pre>
+        <div id="imagem"></div>
+    <script>
+        var arquivo = document.getElementById('arquivo');
+        var listaArquivo = document.getElementById('arquivos');
+        var notepad = document.getElementById('notepad');
+        var imagem = document.getElementById('imagem');
+        //colocar arquivo no plunc. para compartilhar.
+
+        arquivo.addEventListener("change", function (e) {
+            var selectedFile = e.target.files[0];
+            var fr = new FileReader();
+            if (selectedFile.type == "text/plain") {
+                fr.onload = function (ev) {
+                    notepad.innerText = ev.target.result;
+                }
+                fr.readAsText(selectedFile);
+            } else {
+                fr.readAsDataURL(selectedFile);
+                fr.onload = function (ev) {
+                    var img = new Image();
+                    img.src = ev.target.result;
+                    //img = ev.target.result;
+                    imagem.appendChild(img);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

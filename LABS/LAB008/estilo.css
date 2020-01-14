@@ -1,0 +1,25 @@
+﻿body {
+}
+div{
+    top:20px;
+    height:300px;
+    width:300px;
+    border-radius:10px;
+}
+.pontilhado{
+    border: 2px dashed #ddd;
+    position: relative;
+}
+.pontilhado>*{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+div#A {
+    background-color: skyblue;
+    align-content:center;
+}
+div#B{
+    background-color:greenyellow;
+}

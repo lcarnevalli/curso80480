@@ -67,6 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="IMAGENS\IM1.jpg" />
+    <Content Include="IMAGENS\im10.jpg" />
+    <Content Include="IMAGENS\im11.jpg" />
+    <Content Include="IMAGENS\im12.jpg" />
+    <Content Include="IMAGENS\IM2.jpg" />
+    <Content Include="IMAGENS\IM3.jpg" />
+    <Content Include="IMAGENS\IM4.jpg" />
+    <Content Include="IMAGENS\IM5.jpg" />
+    <Content Include="IMAGENS\IM6.jpg" />
+    <Content Include="IMAGENS\IM6_2.jpg" />
+    <Content Include="IMAGENS\IM7.jpg" />
+    <Content Include="IMAGENS\im8.jpg" />
+    <Content Include="IMAGENS\images.jpg" />
+    <Content Include="IMAGENS\impressora.jpg" />
     <Content Include="LAB001\01.html" />
     <Content Include="LAB001\olaMundo.js" />
     <Content Include="LAB002\02.html" />
@@ -90,6 +104,17 @@
     <Content Include="LAB005\POST-JQUERY.html" />
     <Content Include="LAB005\POST-JS.html" />
     <Content Include="LAB006\01-Fonts.html" />
+    <Content Include="LAB007\02.html" />
+    <Content Include="LAB007\03.html" />
+    <Content Include="LAB007\04.html" />
+    <Content Include="LAB007\05.html" />
+    <Content Include="LAB007\estilo.css" />
+    <Content Include="LAB007\PAG1.html" />
+    <Content Include="LAB007\scripts\scriptLab.js" />
+    <Content Include="LAB008\01.html" />
+    <Content Include="LAB008\03-VIDEO.html" />
+    <Content Include="LAB008\02-drag_drop.html" />
+    <Content Include="LAB008\estilo.css" />
     <Content Include="LAB010\01-PRINT.html" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
