@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <video id="vdo" draggable="true"
+           ondragstart="dragstart(event)"
+           ondragend="dragend(event)"
+           controls loop
+           height="300"
+           width="300">
+
+        <source src="http://techslides.com/demos/sample-videos/small.mp4"
+                type="video/mp4" />
+    </video>
+    <script>
+        
+        (function (hidden, status) {
+            var getVideo = document.getElementById("vdo");
+            function changeStatus() {
+                if (document[hidden]) {
+                    getVideo.pause();
+                } else {
+                    getVideo.play();
+                }
+            }
+
+            document.addEventListener(status, changeStatus, false);
+
+            getVideo.addEventListener('pause', function () {
+                document.title = "!!--> PAUSE <--!!";
+            });
+
+            getVideo.addEventListener('play', function () {
+                document.title = "!!--> VALENDO <--!!";
+            });
+        })('hidden', 'visibilitychange');
+
+        alert(navigator.userAgent);
+        alert(navigator.onLine);
+
+    </script>
+</body>
+</html>

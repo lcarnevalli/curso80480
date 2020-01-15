@@ -1,0 +1,34 @@
+﻿]<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var urlMapa = 'https://maps.google.com/maps?q=';
+
+        var accurancy = {
+            enableHighAccurancy: true,
+            timeout: 5000,
+            speed: true
+        };
+
+        function ok(coordenadas) {
+            var latitude = coordenadas.coords.latitude;
+            var longitude = coordenadas.coords.longitude;
+            var dist = coordenadas.coords.accurancy;
+
+            console.log(`Lat: ${latitude} - Long: ${longitude}`);
+
+            location.href = `${urlMapa}${latitude},${longitude}`;
+        }
+
+        function erro(erro) {
+            console.error(erro.message);
+        }
+
+        navigator.geolocation.getCurrentPosition(ok, erro);
+</script>
+</body>
+</html>

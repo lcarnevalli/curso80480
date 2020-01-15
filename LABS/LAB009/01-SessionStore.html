@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="text" id="normal" />
+    <input type="text" id="cripto" />
+    <button id="btn">Escrever</button>
+    <iframe src="http://localhost:50605/" width="500" height="500">
+
+
+    </iframe>
+    <script>
+        document.getElementById("btn").addEventListener("click", function () {
+            var normal = document.getElementById("normal").value;
+            var arrInfo = [];
+            for (var i = 0; i < 10; i++) {
+                arrInfo.push({
+                    Data: new Date(),
+                    id: i,
+                    campo: normal
+                });
+            }
+
+            sessionStorage.setItem("informacao", window.btoa(JSON.stringify(arrInfo)));
+        });
+
+        var cripto = sessionStorage.getItem("informacao");
+
+        if (cripto) {
+            document.getElementById("cripto").value = cripto;
+            document.getElementById("normal").value = atob(cripto);
+            var objeto = JSON.parse(atob(cripto));
+            var arrInfo = objeto;
+            arrInfo.push({
+                Data: new Date(),
+                id: arrInfo.length,
+                campo: "NOVO ITEM"
+            });
+            sessionStorage.setItem("informacao", window.btoa(JSON.stringify(arrInfo)));
+        };
+
+        window.addEventListener('storage', function (e) {
+            if (!e.newValue) {
+                alert('Alguem excluiu a chave' + e.key);
+            }
+        })
+
+        
+    </script>
+</body>
+</html>
