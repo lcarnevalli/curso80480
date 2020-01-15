@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div{
+            margin-top: 20px;
+            height: 300px;
+            width: 300px;
+            border-radius: 10px;
+        }
+        .pontilhado {
+            border: 2px dashed #ddd;
+            position: relative;
+        }
+        .pontilhado > *{
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="A"
+         ondragenter="dragenter(event)" 
+         ondrop="drop(event)"
+         ondragleave="dragleave(event)"
+         ondragover="dragover(event)"
+         class="pontilhado">
+        <video id="carro" draggable="true" 
+               ondragstart="dragstart(event)"
+               ondragend="dragend(event)"
+               controls loop 
+               height="300" 
+               width="300">
+
+            <source src="http://techslides.com/demos/sample-videos/small.mp4"  
+                    type="video/mp4"/>
+        </video>
+
+        <!--<img id="imagem"
+             src="../LAB001/carro.jpg" 
+             height="200" 
+             draggable="true"
+             ondragstart="dragstart(event)"
+             ondragend="dragend(event)"
+             width="200" />-->
+    </div>
+
+    <div id="B" ondragenter="dragenter(event)" 
+         ondrop="drop(event)"
+         ondragleave="dragleave(event)"
+         ondragover="dragover(event)"
+         class="pontilhado">
+
+    </div>
+    <script>
+        var video = document.getElementById("carro");
+
+        function dragstart(e) {
+            e.dataTransfer.setData("image", e.target.id);
+            video.pause();
+        }
+        function dragend(e) {
+            console.log("Final Drag");
+        }
+        function dragenter(e) {
+            console.log("Entrou no Drop");
+        }
+        function dragover(e) {
+            e.preventDefault();
+        }
+        function dragLeave(e) {
+            console.log("Drag Leave");
+        }
+
+        function drop(e) {
+            e.preventDefault();
+            var idElemento = e.dataTransfer.getData("image");
+            var elemento = document.getElementById(idElemento);
+
+            if (e.target.tagName == "DIV") {
+                e.target.appendChild(elemento);
+            } else {
+                e.target.parentElement.appendChild(elemento);
+            }
+            video.play();
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html manifest="03-manifesto.html">
+<head>
+    <title></title>
+
+    <script src="../Scripts/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="Database.js"></script>
+    <script src="aluno.js"></script>
+</head>
+<body>
+    <fieldset>
+        <legend> Cadastro de Alunos</legend>
+        <input type="hidden" id="txtId" />
+        <input type="text" id="txtNome"
+               placeholder="Nome Aluno" />
+
+        <input type="number" id="txtIdade"
+               placeholder="Idade Aluno" />
+
+        <input type="email" id="txtEmail"
+               autocomplete="on"
+               placeholder="Email Aluno" />
+
+        <input type="submit" id="enviar"
+               onclick="addAluno(); return false;" />
+    </fieldset>
+
+    <br />
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th> Nome do Aluno</th>
+                <th> Idade</th>
+                <th> Email</th>
+                <th> Excluir</th>
+                <th> Selecionar</th>
+            </tr>
+        </thead>
+        <tbody id="dados"></tbody>
+    </table>
+    <script></script>
+</body>
+</html>

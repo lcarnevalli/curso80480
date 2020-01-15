@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <button onclick="calculadora.Soma(1,3)"></button>
+    <script>
+        //Namespace
+
+
+        var calculadora = function (num1, num2) {
+            this.Soma = function () {
+                return num1 + num2;
+            };
+        }
+
+        var calc = new calculadora(1, 3);
+
+        alert(calc.Soma());
+
+
+        var contaBancaria = function (nome, cpf, ag) {
+            this.Nome = nome;
+            this.CPF = cpf;
+            this.Ag = ag;
+            var contaCorrente = function () {
+                return (this.CPF / this.Ag);
+            }
+            this.Conta = contaCorrente();
+        }
+
+        class conta extends contaBancaria {
+            constructor(nome, cpf, ag) {
+                super(nome, cpf, ag)
+            }
+
+            criarConta() {
+                return super.Conta;
+            }
+        }
+
+        var contaNova = new conta("henrique", 225546554654, 2455);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int idade = 40;
+            string nome = $"Henrique {idade}";
+            Console.WriteLine(string.Format("Henrique {0}", idade));
+            Console.ReadKey();
+
+            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+        }
+
+    }
+}

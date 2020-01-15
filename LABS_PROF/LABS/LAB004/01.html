@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        input{
+            border:1px solid;
+        }
+
+        input:invalid{
+            border-color: red;
+        }
+            input:valid {
+                border-color: green;
+            }
+
+    </style>
+</head>
+<body>
+    <form id="formLogin" onsubmit="return validarHENRI03(false);">
+        <input type="text" onblur="validarHENRI03(true)" id="login" pattern="[A-Za-z]{5}[0-9]{2}" title="Padrão AAAAA00" required placeholder="Digite seu usuário" />
+        <input type="password" required placeholder="Digite sua senha" />
+        <select>
+            <optgroup label="Latam">
+                <option value="BR">BR.local</option>
+                <option value="AR">AR.local</option>
+            </optgroup>
+            <optgroup label="Global">
+                <option value="US">US.local</option>
+                <option value="ES">ES.local</option>
+            </optgroup>
+        </select>
+        <button type="submit">Logar</button>
+    </form>
+    <script>
+        function validarHENRI03(limpar) {
+            var resposta = true;
+            var usuario = document.getElementById('login').value;
+            if (usuario == "HENRI03") {
+                alert("Fujam para as colinas");
+                resposta = false;
+                if (limpar) {
+                    document.getElementById('login').value = '';
+                }
+            }
+            return resposta;
+        }
+    </script>
+</body>
+</html>

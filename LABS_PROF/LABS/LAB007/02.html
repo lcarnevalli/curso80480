@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <button onclick="meuNamespace.somar();"></button>
+    <button onclick="meuNamespace.subtrair();"></button>
+    <script>
+        var meuNamespace = {
+            somar: function (num1, num2) {
+                meuOutroNamespace.alertas('Somar');
+            },
+            subtrair: function (num1, num2) {
+                meuOutroNamespace.alertas('Subtrair');
+            },
+            multiplicar: function (num1, num2) {
+            }
+        }
+
+        var meuOutroNamespace = {
+            alertas: function (msg) {
+                alert(msg);
+            }
+        }
+    </script>
+</body>
+</html>

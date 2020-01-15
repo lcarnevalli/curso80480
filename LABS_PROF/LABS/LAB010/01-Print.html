@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            margin:0;
+            padding:0;
+            background: #ccc;
+            font: 12pt "Arial";
+        }
+        * {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .pagina {
+            width: 21cm;
+            min-height: 29.7cm;
+            padding: 2cm;
+            margin: 1cm auto;
+            border: 1px solid #000;
+            background:white;
+        }
+        .subpagina {
+            padding: 1cm;
+            border: 5px solid #808080;
+            height: 255mm;
+            outline: 2cm #ffeeaa solid;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        @media print{
+            .pagina {
+                page-break-after: always;
+                margin: 0;
+                border: initial;
+                width: initial;
+                min-height: initial;
+            }
+            button {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+            body {
+                background-color: navy;
+                color: magenta;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="livro">
+        <div class="pagina">
+            <div class="subpagina">
+               <p> Primeiro eu queria cumprimentar os internautas. -Oi Internautas! Depois dizer que o meio ambiente é sem dúvida nenhuma uma ameaça ao desenvolvimento sustentável. E isso significa que é uma ameaça pro futuro do nosso planeta e dos nossos países. O desemprego beira 20%, ou seja, 1 em cada 4 portugueses.</p>
+               <p> A única área que eu acho, que vai exigir muita atenção nossa, e aí eu já aventei a hipótese de até criar um ministério. É na área de... Na área... Eu diria assim, como uma espécie de analogia com o que acontece na área agrícola.                                                                          </p>
+               <p> Ai você fala o seguinte: "- Mas vocês acabaram isso?" Vou te falar: -"Não, está em andamento!" Tem obras que "vai" durar pra depois de 2010. Agora, por isso, nós já não desenhamos, não começamos a fazer projeto do que nós "podêmo fazê"? 11, 12, 13, 14... Por que é que não?                             </p>
+               <p> No meu xinélo da humildade eu gostaria muito de ver o Neymar e o Ganso. Por que eu acho que.... 11 entre 10 brasileiros gostariam. Você veja, eu já vi, parei de ver. Voltei a ver, e acho que o Neymar e o Ganso têm essa capacidade de fazer a gente olhar.                                                 </p>
+            </div>
+        </div>
+
+        <div class="pagina">
+            <div class="subpagina">
+                <p> Primeiro eu queria cumprimentar os internautas. -Oi Internautas! Depois dizer que o meio ambiente é sem dúvida nenhuma uma ameaça ao desenvolvimento sustentável. E isso significa que é uma ameaça pro futuro do nosso planeta e dos nossos países. O desemprego beira 20%, ou seja, 1 em cada 4 portugueses.</p>
+                <p> A única área que eu acho, que vai exigir muita atenção nossa, e aí eu já aventei a hipótese de até criar um ministério. É na área de... Na área... Eu diria assim, como uma espécie de analogia com o que acontece na área agrícola.                                                                          </p>
+                <p> Ai você fala o seguinte: "- Mas vocês acabaram isso?" Vou te falar: -"Não, está em andamento!" Tem obras que "vai" durar pra depois de 2010. Agora, por isso, nós já não desenhamos, não começamos a fazer projeto do que nós "podêmo fazê"? 11, 12, 13, 14... Por que é que não?                             </p>
+                <p> No meu xinélo da humildade eu gostaria muito de ver o Neymar e o Ganso. Por que eu acho que.... 11 entre 10 brasileiros gostariam. Você veja, eu já vi, parei de ver. Voltei a ver, e acho que o Neymar e o Ganso têm essa capacidade de fazer a gente olhar.                                                 </p>
+            </div>
+        </div>
+    </div>
+    <button onclick="window.print();"> PRINT</button>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+    <table>
+        <tbody id="dados"></tbody>
+    </table>
+    <img src="carregando.gif" id="gif" hidden />
+    <script src="../Scripts/jquery-3.4.1.js"></script>
+    <script>
+        var url = 'http://localhost:56014/api/cadastros';
+        var bearer = 'Bearer ' + 'jwtoken';
+
+        var request = $.ajax({
+            url: url,
+            beforeSend: function (xhr) {
+                //xhr.setRequestHeader('Authorization', bearer);
+                $("img#gif").toggle();
+            }
+        });
+
+        request.done(function (data, status, xhr) {
+            preencherGrid(data);
+            $("img#gif").toggle();
+
+        });
+
+        function preencherGrid(json) {
+            for (var i = 0; i < json.length; i++) {
+                var linha = `<tr><td>${json[i].Nome}</td><td>${json[i].Idade}</td></tr>`;
+                $("#dados").append(linha);
+            }
+        }
+    </script>
+</body>
+</html>

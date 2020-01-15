@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Variaveis</title>
+</head>
+<body>
+    <script>
+        var idade = 41;
+        
+        //var nome = 'Henrique tem ' + idade+ 'anos';// concatenação de strings
+        var maiorDe40 = false;
+        if (idade > 40) {
+            maiorDe40 = true;
+        }
+        var velho = maiorDe40 ? "Idoso" : "Novão"; //if ternario
+
+        var nome = `Henrique tem ${idade} anos é ${velho}`; //string interpolation
+        //Para validar se uma variável e nula ou indefinida
+        if (nome) {
+            alert(nome);
+        } else {
+            alert(`Objeto nome está: ${nome}`);
+        }
+        var status = 1;
+        switch (status) {
+            case 1:
+            case 11:
+            case 53:
+                //Enviar SMS
+                alert('Enviar SMS');
+                break;
+            case 2:
+            case 22:
+            case 24:
+                //Enviar email,
+                alert('Enviar Email');
+                break;
+            default:
+        }
+
+        function repeticoes() {
+            var contador = 0;
+            while (contador != 5) {
+                contador++;
+            }
+
+            var contadorDO = 0;
+            do {
+                contador++;
+            } while (contador != 5);
+
+            for (var i = 0; i < length; i++) {
+
+            }
+        }
+
+    </script>
+</body>
+</html>

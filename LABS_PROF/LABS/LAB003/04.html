@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input class="add" type="text" id="nomeCarro" />
+    <button class="add">Add</button> 
+    <button class="count">Contar Carro</button>
+    <button class="mostrar">Mostrar Tabela</button>
+
+    <ul id="carros">
+
+    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Carro</th>
+            </tr>
+        </thead>
+        <tbody id="carros">
+            
+        </tbody>
+    </table>
+
+    <script src="../Scripts/jquery-3.4.1.js"></script>
+    <script>
+        var carros = [];
+        $(document).ready(function () {
+            $("button.add").click(function () {
+                var nomeCarro = $("#nomeCarro").val();
+                carros.push(nomeCarro);
+                $("ul#carros")
+                    .append(`<li>${nomeCarro} &nbsp; <span style="cursor:pointer" onclick="remove(this)">X</span></li>`);
+
+            });
+            $("button.count").click(function () {
+                alert($("ul#carros li").length);
+
+                var totalCarros = $("ul#carros li").length;
+
+                $("tbody#carros").empty();
+
+                for (var i = 0; i < totalCarros; i++) {
+                    var linha = `<tr><td>${i + 1}</td><td>${carros[i]}</td></tr>`;
+                    $("tbody#carros").append(linha);
+                };
+                //$("ul#carros li").each(function (indice, value) {
+                //    var nomeCarro = value.innerText.replace('X', '');
+                //})
+
+            });
+            $("ul#carros,table").hide();
+            $("button.mostrar").click(function () {
+                $("ul#carros,table").toggle();
+            });
+        });
+
+        function remove(controle) {
+            $(controle).parent().remove();
+        }
+
+    </script>
+</body>
+</html>
