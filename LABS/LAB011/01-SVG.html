@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .peca {
+            position:absolute;
+            border-radius:50%;
+            height:40px;
+            width:40px;
+        }
+        .p1 {
+            margin-top:5px;
+            margin-left:5px;
+        }
+        .p32 {
+            margin-top: 355px;
+            margin-left: 56px;
+        }
+        .vermelha{
+            background-color:red;
+        }
+        .branco {
+            background-color: white;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="peca p1 branco"></div>
+    <div class="peca p32 vermelha"> </div>
+
+    <svg id="tabuleiro" xmlns="http://www.w3.org/2000/svg" width="400" height="400" style="border:1px solid #000">
+        <!-- linha1-->
+        <!--
+        <rect fill="#000" width="50" stroke=#000 height="50" x="0" y="0"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="50" y="0"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="100" y="0"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="150" y="0"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="200" y="0"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="250" y="0"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="300" y="0"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="350" y="0"></rect>
+        <!-- linha2-->
+        <!--
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="0" y="50"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="50" y="50"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="100" y="50"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="150" y="50"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="200" y="50"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="250" y="50"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="300" y="50"></rect>
+        <rect fill="#000    " width="50" stroke=#000 height="50" x="350" y="50"></rect>
+        <!-- linha3-->
+        <!--
+        <rect fill="#000" width="50" stroke=#000 height="50" x="0" y="100"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="50" y="100"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="100" y="100"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="150" y="100"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="200" y="100"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="250" y="100"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="300" y="100"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="350" y="100"></rect>
+        <!-- linha4-->
+        <!--
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="0" y="150"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="50" y="150"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="100" y="150"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="150" y="150"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="200" y="150"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="250" y="150"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="300" y="150"></rect>
+        <rect fill="#000    " width="50" stroke=#000 height="50" x="350" y="150"></rect>
+        <!-- linha5-->
+        <!--
+        <rect fill="#000" width="50" stroke=#000 height="50" x="0" y="200"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="50" y="200"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="100" y="200"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="150" y="200"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="200" y="200"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="250" y="200"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="300" y="200"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="350" y="200"></rect>
+        <!-- linha6-->
+        <!--
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="0" y="250"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="50" y="250"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="100" y="250"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="150" y="250"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="200" y="250"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="250" y="250"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="300" y="250"></rect>
+        <rect fill="#000    " width="50" stroke=#000 height="50" x="350" y="250"></rect>
+        <!-- linha7-->
+        <!--
+        <rect fill="#000" width="50" stroke=#000 height="50" x="0" y="300"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="50" y="300"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="100" y="300"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="150" y="300"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="200" y="300"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="250" y="300"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="300" y="300"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="350" y="300"></rect>
+        <!-- linha8-->
+        <!--
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="0" y="350"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="50" y="350"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="100" y="350"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="150" y="350"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="200" y="350"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="250" y="350"></rect>
+        <rect fill="#fff" width="50" stroke=#000 height="50" x="300" y="350"></rect>
+        <rect fill="#000" width="50" stroke=#000 height="50" x="350" y="350"></rect>
+        -->
+    </svg>
+
+    <script>
+        const tamx = 50;
+        const tamy = 50;
+        var cor = "#000";
+        var par = "";
+        var impar = "";
+        var contador = 0;
+        for (var j = 0; j <= 7; j++) {
+            if (j % 2 == 0) {
+                par = "#000";
+                impar = "#fff";
+            } else {
+                par = "#fff";
+                impar = "#000";
+            }
+            for (var i = 0; i <= 7; i++) {
+                if (i % 2 == 0) {
+                    var linha = `<rect id="linhaColuna${contador}" fill="${par}" width="${tamx}" stroke=#000 height="${tamy}" x="${(i * tamx)}" y="${(j * tamy)}"></rect >`;
+                        //document.getElementById("tabuleiro").innerHTML = '<rect fill="' + par + '" width="' + tamx + '" stroke=#000 height="' + tamy + '" x="' + (i * tamx) + '" y="' + (j * tamy) + '"></rect >';
+                } else {
+                    var linha = `<rect id="linhaColuna${contador}" fill="${impar}" width="${tamx}" stroke=#000 height="${tamy}" x="${(i * tamx)}" y="${(j * tamy)}"></rect >`;
+                     //document.getElementById("tabuleiro").innerHTML = '<rect fill="' + impar + '" width="' + tamx + '" stroke=#000 height="' + tamy + '" x="' + (i * tamx) + '" y="' + (j * tamy) + '"></rect >';
+                }
+                console.log(linha);
+
+                //document.getElementById("tabuleiro").innerHTML = linha;
+                
+                //if ((i == 0) && (j == 0)) {
+                if (contador == 0) {
+                    //document.getElementById("tabuleiro").append(linha);
+                    document.getElementById("tabuleiro").appendChild(linha) ;
+                } else {
+                    var idLinhaColuna = "linhaColuna" + (contador - 1);
+                    //document.getElementById(idLinhaColuna).append(linha);
+                    document.getElementById("tabuleiro").appendChild(linha);
+                }
+                //document.getElementById(idLinhaColuna).append(linha);
+                contador++;
+                //document.getElementById("tabuleiro").append(linha);
+            }
+        }
+    </script>
+</body>
+    </html>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg">
+
+    </svg>
+
+    <rect x="50" y="50" width="100" height="75"
+          rx="20" ry="20" fill="red" stroke="blue" />
+
+    <rect x="75" y="75" width="100" height="75"
+          fill="yellow" stroke="blue" />
+
+
+    <circle cx="120" cy="80" r="40"
+            stroke="blue" fill="red" />
+
+    <circle cx="160" cy="70" r="60"
+            stroke="blue" fill="yellow" />
+
+    <ellipse cx="150" cy="60" rx="110" ry="30"
+             stroke="blue" fill="red" />
+
+    <ellipse cx="150" cy="140" rx="110" ry="30"
+             stroke="blue" fill="yellow" />
+
+    <polyline points="105 100, 120 100, 125 90, 135 110, 145 90, …
+              fill="none" stroke="blue" />
+
+    <polygon points="110 70, 150 40, 190 70, 190 160, 150 130, 110 160"
+             fill="yellow" stroke="blue" />
+
+    <path d="M 150 50 L 250 150 L 50 150 Z"
+          fill="red" stroke="blue" />

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="600">
+
+
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var contexto = canvas.getContext('2d');
+        var altura = 30, largura = 30;
+        var x = 10, y = 10;
+
+        function elemento() {
+            contexto.fillRect(x, y, largura, altura);
+        }
+
+        elemento();
+
+
+        //38 -- CIMA
+        //40 -- BAIXO
+        //39 -- Direita
+        //37 -- Esquerda
+        document.addEventListener('keydown', function (e) {
+            contexto.clearRect(x, y, 30, 30);
+            switch (e.keyCode) {
+                case 38:// para baixo
+                    y -= 5;
+                    break;
+                case 40: // para cima
+                    y += 5;
+                    break;
+                case 39:
+                    x += 5;// para direita
+                    break;
+                case 37:
+                    x -= 5;//para esquerda
+                    break;
+                case 32:
+                    atirar(x + 30,y);
+                    break;
+            }
+            elemento();
+        });
+
+        var xTiroFoi=0;
+        var xTiro;
+        var tempo;
+
+        function atirar(x, y) {
+            tepo = setInterval(function () {
+                xtiro = xTiroFoi == 0 ? x : xTiro;
+                tiro(x, y)
+            }, 10);
+
+        }
+
+        function tiro(x, y) {
+            xTiro += 5;
+            xTiroFoi = xTiro;
+            contexto.fillRect(xTiro, y, 5, 5);
+            contexto.clearRect(xTiro - 5, y, 5, 5);
+            if (xTiro > 800) {
+                clearInterval(tempo);
+                xTiroFoi = 0;
+                xtiro = 0;
+            }
+        }
+    </script>
+</body>
+</html>
