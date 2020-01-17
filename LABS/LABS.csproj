@@ -128,6 +128,14 @@
     <Content Include="LAB010\01-PRINT.html" />
     <Content Include="LAB011\01-SVG.html" />
     <Content Include="LAB011\02-canvas.html" />
+    <Content Include="LAB012\01-transicao.html" />
+    <Content Include="LAB012\02-transform.html" />
+    <Content Include="LAB012\03-animacao.html" />
+    <Content Include="LAB012\04-pneu.html" />
+    <Content Include="LAB012\batman.png" />
+    <Content Include="LAB012\fundo.jpg" />
+    <Content Include="LAB012\pneu.png" />
+    <Content Include="LAB013\01-WEBSOCKET.html" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />

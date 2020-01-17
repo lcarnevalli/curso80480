@@ -1,0 +1,19 @@
+{
+  "FilePath": "c:\\Users\\lcarnevalli\\OneDrive - Grupo VR\\pessoal\\curso_ka_solution\\80480\\curso80480\\api\\api.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": null,
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}

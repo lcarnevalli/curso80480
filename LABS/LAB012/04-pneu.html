@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        img#pneu1{
+            position:absolute;
+            top:350px;
+            left:300px;
+            width:130px;
+            height:130px;
+            animation: rodapneu 1s linear infinite;
+        }
+        img#pneu2 {
+            position: absolute;
+            top: 350px;
+            left: 700px;
+            width: 130px;
+            height: 130px;
+            animation: rodapneu 1s linear infinite;
+        }
+        img#batman {
+            position: absolute;
+            top: 250px;
+            left: 150px;
+            width: 777px;
+            height: 232px;
+        }
+        img#fundo {
+            position: absolute;
+            left: 0px;
+            width: 2500px;
+            height: 550px;
+            animation: moveFundo 3s linear infinite;
+        }
+        @keyframes moveFundo {
+            from {
+                left: 0px;
+            }
+            to{
+                left:-800px;
+            }
+        }
+
+        @keyframes rodapneu {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <img id="fundo" src="fundo.jpg" />
+    <img id="batman" src="batman.png" />
+    <img id="pneu1" src="pneu.png" />
+    <img id="pneu2" src="pneu.png" />
+</body>
+</html>

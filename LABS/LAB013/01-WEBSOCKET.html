@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../Scripts/jquery-3.4.1.js"></script>
+</head>
+<body>
+    WSS:/CONNECT.WEBSOCKET.IN/WILLIAM?ROOM_ID=1000;
+    
+
+    <input type="text"  id="msg"  value="" />
+    <input type="button"  id="btn"  value="enviar" />
+    <ul id="li">
+
+    </ul>
+    <script>
+      /*  $(function () {
+            var ws = new WebSocket('wss://connect.websocket.in/william?room_id=100');
+            var log = function (msg) {
+                var linha = "<li>" + msg + "</li>"
+                $('#li').append(linha);
+            }
+            ws.onopen = function (e) {
+                log('Henrique Entrou na sala');
+            }
+            ws.onclose = function (e) {
+                log('Henrique saiu na sala');
+            }
+            ws.onmessage = function (e) {
+                log(e.data);
+            }
+            $('#btn').click(function () {
+                ws.send($('#msg').val());
+                log($('#msg').val());
+            });
+        });
+        */
+        $(function () {
+            var ws = new WebSocket('wss://connect.websocket.in/william?room_id=1000');
+
+            var log = function (msg) {
+                $('#li').append(`<li>${msg}</li>`);
+            };
+
+            ws.onopen = function (e) {
+                log('Henrique Entrou na sala');
+                ws.send('HENRIQUE ENTROU NA SALA')
+            }
+
+            ws.onclose = function (e) {
+                log('Henrique saiu na sala');
+                ws.send('Henrique saiu na sala')
+            }
+
+            ws.onmessage = function (e) {
+                log(e.data);
+            }
+
+            $("#btn").click(function () {
+                ws.send($("#msg").val());
+                log($("#msg").val());
+            })
+        });
+
+    </script>
+</body>
+</html>

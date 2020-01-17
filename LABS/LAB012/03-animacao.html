@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #bola {
+            border-radius:50%;
+            height:60px;
+            width:60px;
+            background:black;
+            margin-top:0px;
+            margin-left:0px;
+            animation: rolabola 3s linear infinite;
+        }
+        @keyframes rolabola {
+            0% {
+                margin-top: 0px;
+                margin-left: 0px;
+                background: orange;
+            }
+
+            25% {
+                margin-top: 0px;
+                margin-left: 600px;
+                background: blue;
+            }
+
+            50% {
+                margin-top: 600px;
+                margin-left: 600px;
+                background: yellow;
+            }
+
+            75% {
+                margin-top: 600px;
+                margin-left:0px;
+                background:green;
+            }
+           100% {
+                margin-top: 0px;
+                margin-left:0px;
+                background:gray;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="bola">
+
+    </div>
+
+    <script>
+        /*for (var i = 0; i < 2000; i++) {
+            document.getElementById("bola").style.width += i;
+            document.getElementById("bola").style.height += i;
+            for (var i = 0; i < 100; i++) {
+
+            }
+        }
+        */
+    </script>
+</body>
+</html>
