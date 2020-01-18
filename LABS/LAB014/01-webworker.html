@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="button" value="Iniciar" id="iniciar" />
+    <input type="button" value="Fim" id="fim"/>
+    <h1 id="data"></h1>
+
+    <script>
+        var worker;
+
+        (function () {
+            document.getElementById("iniciar").addEventListener("click", function () {
+                if (!worker) {
+                    //worker = new Worker('lab014-0.js');
+                    worker = new SharedWork('lab014-0.js');
+                    worker.onmessage = function (e) {
+                        document.getElementById('data').innerHTML = e.data;
+                    }
+                }
+            })
+
+            document.getElementById('fim').addEventListener('click', function () {
+                if (worker) {
+                    worker.terminate();
+                    worker = null;
+                }
+            });
+
+        });
+
+
+    </script>
+</body>
+</html>

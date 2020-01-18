@@ -136,6 +136,10 @@
     <Content Include="LAB012\fundo.jpg" />
     <Content Include="LAB012\pneu.png" />
     <Content Include="LAB013\01-WEBSOCKET.html" />
+    <Content Include="LAB013\04-chart.html" />
+    <Content Include="LAB014\01-webworker.html" />
+    <Content Include="LAB014\lab014-0.js" />
+    <Content Include="LAB014\lab014-shared.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
